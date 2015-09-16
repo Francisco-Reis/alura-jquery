@@ -1,0 +1,26 @@
+JQUERY:
+Padroniza a linguagem javascript em um estilo próprio, ja existem diferentes interpretacoes do
+javascript pelos navegadores. Muito menos codigo eh necessario.
+
+Codigo para pegar todas as tags p e alterar o valor:
+javascript puro:
+var paragrafos = document.querySelectorAll('p');
+for(var i=0, i < paragrafos.length; i++) {
+   paragrafos[i].textContent = "novo texto"
+}
+jquery:
+$('p').text('novo texto');
+
+Alias do Jquery: Dollar ($) ou jquery
+ex: as duas linhas abaixo tem o mesmo valor
+jQuery('#texto-copiado').text('Alura');
+$('#texto-copiado').text('Alura');
+
+Versoes:
+1.x: conpatibilidade com navegadores antigos (ie8)
+2.x: mais leve e avancada
+
+O seletor aops o dollar eh o mesmo do CSS:
+#id
+.classe
+elemento
