@@ -3,12 +3,12 @@ Padroniza a linguagem javascript em um estilo próprio, ja existem diferentes in
 javascript pelos navegadores. Muito menos codigo eh necessario.
 
 Codigo para pegar todas as tags p e alterar o valor:
-javascript puro:
+----------------- javascript puro -----------------
 var paragrafos = document.querySelectorAll('p');
 for(var i=0, i < paragrafos.length; i++) {
    paragrafos[i].textContent = "novo texto"
 }
-jquery:
+--------------- equivalente jquery ----------------
 $('p').text('novo texto');
 
 Alias do Jquery: Dollar ($) ou jquery
@@ -20,7 +20,28 @@ Versoes:
 1.x: conpatibilidade com navegadores antigos (ie8)
 2.x: mais leve e avancada
 
-O seletor aops o dollar eh o mesmo do CSS:
+O seletor após o dollar eh o mesmo do CSS:
 #id
 .classe
 elemento
+
+CLICK: Função 'click' de botões
+Sempre recebe um bloco de função anonima. Ex:
+$('#botao').click(
+	function(){
+		// execução
+	}
+);
+
+VAL: Função value de inputs
+Pega valor dos inputs da pagina.
+
+-- Outras funções ---
+BLUR: Quando o usuario deixa o campo
+MOUSEOVER: Mouse por cima do campo
+DBLCLICK: Duplo clique
+CHANGE: Quando valor do campo muda
+
+ON: recebe o evento como primeiro paramentro, seguido da função anonima
+Ex: $('#botao').on("click", function() ....
+    $('#botao').on("blur", function() ....
