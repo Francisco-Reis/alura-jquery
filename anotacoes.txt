@@ -34,7 +34,9 @@ $('#botao').click(
 );
 
 VAL: Função value de inputs
-Pega valor dos inputs da pagina.
+val(): Ao chamar vazio, pega valor do input da pagina.
+val('texto'): Ao chamar com valor, seta o valor do campo.
+
 
 -- Outras funções ---
 BLUR: Quando o usuario deixa o campo
@@ -45,3 +47,20 @@ CHANGE: Quando valor do campo muda
 ON: recebe o evento como primeiro paramentro, seguido da função anonima
 Ex: $('#botao').on("click", function() ....
     $('#botao').on("blur", function() ....
+
+--- Pegando o texto de um dos itens da lista ao clicar ----
+Simples:
+$('li').click(funtion(
+	var texto = $(this).text();
+	alert(texto);
+));
+Composto (pega itens novos tambem, chamado DELEGAÇÃO). Função on com 3 parametros:
+$('#lista').on("click","li",funtion(
+	var texto = $(this).text();
+	alert(texto);
+));
+
+--- Criar novos elementos no HTML ----
+Com a função dollar $ passando a tag html:
+Ex: $('<li>').text(texto).appendTo('#lista');
+	$('<p>') ....
