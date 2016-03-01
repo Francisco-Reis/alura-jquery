@@ -64,3 +64,22 @@ $('#lista').on("click","li",funtion(
 Com a função dollar $ passando a tag html:
 Ex: $('<li>').text(texto).appendTo('#lista');
 	$('<p>') ....
+
+FUNÇÃO CSS:
+Injeta css nos nosvos elementos. Ex:
+$('<li>').text(texto).css('color','blue').appendTo('#lista')
+css({'color':'blue', 'background-color':'lightgrey' })
+
+Função REMOVE:
+Remove um elemento da pagina HTML 
+
+Função ANIMATE:
+Faz uma animação com algum elemento da pagina
+Ex: $('h1').animete({"margin-left" : "+=100"});
+	$('h1').animete({"margin-left" : "+=100"}, 4000); // com delay
+Ex para animar e remover logo em seguida:
+$('#lista').on('dblclick','li',function() {
+			$(this).animate({'margin-left' : '+=100'}, function() {
+				$(this).remove();
+			});
+		});
