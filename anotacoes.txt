@@ -83,3 +83,39 @@ $('#lista').on('dblclick','li',function() {
 				$(this).remove();
 			});
 		});
+
+AJAX:
+Asynchronous JAvaScript an XML
+As trocas de informações do ajax são feitas usando a notação JSON
+
+Função AJAX:
+Função que faz as requisições ajax, segue o seguinte modelo:
+   $.ajax({ url : ? , 
+               dataType : ?, 
+              success: ? 
+   }});
+Exemplo:
+			$.ajax({
+				url: 'http://mirrorfashion.caelum.com.br/treinamentos',
+				dataType : 'json',
+				success: function(retorno) {
+					
+				}; 
+			});
+
+EXEMPLO DE LAÇO FOR COM FUNCAO EACH
+$.each(retorno.treinamentos, function() {
+						var treinamento = this;
+						alert(treinamento.nome);
+					})
+
+=== dataType : 'jsonp' ===
+tipo de transação ajax mais segura e abranjente
+
+FAZENDO AJAX com GET
+$.get('http://mirrorfashion.caelum.com.br/treinamentos', function(retorno) {
+				$.each(retorno.treinamentos, function() {
+					var treinamento = this;
+					$('<li>').css('color', 'green').text(treinamento.nome).appendTo('#lista');
+				});
+			}, 'jsonp');
